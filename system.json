@@ -1,6 +1,7 @@
 {
   "id": "sine-patria",
   "title": "Sine Patria",
+  "type": "system",
   "description": "A custom game system for Foundry VTT.",
   "version": "1.0.0",
   "compatibility": {
