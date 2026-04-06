@@ -55,5 +55,5 @@
   "secondaryTokenAttribute": "resources.power",
   "url": "https://github.com/geistigermuell/sine-patria",
   "manifest": "https://raw.githubusercontent.com/geistigermuell/sine-patria/main/system.json",
-  "download": "https://github.com/geistigermuell/sine-patria/releases/latest/download/sine-patria.zip"
+  "download": "https://github.com/geistigermuell/sine-patria/archive/refs/heads/main.zip"
 }
