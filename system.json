@@ -52,7 +52,7 @@
   },
   "primaryTokenAttribute": "resources.health",
   "secondaryTokenAttribute": "resources.power",
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/geistigermuell/sine-patria",
+  "manifest": "https://raw.githubusercontent.com/geistigermuell/sine-patria/main/system.json",
+  "download": "https://github.com/geistigermuell/sine-patria/releases/latest/download/sine-patria.zip"
 }
