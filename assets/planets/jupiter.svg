@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <radialGradient id="g" cx="35%" cy="30%" r="70%">
+      <stop offset="0%"   stop-color="#F0C87A"/>
+      <stop offset="100%" stop-color="#8B5A20"/>
+    </radialGradient>
+  </defs>
+  <circle cx="18" cy="18" r="17" fill="url(#g)"/>
+  <!-- bands -->
+  <rect x="1" y="13" width="34" height="3" fill="#C07840" opacity="0.5" rx="1"/>
+  <rect x="1" y="20" width="34" height="2" fill="#C07840" opacity="0.4" rx="1"/>
+  <!-- Great Red Spot hint -->
+  <ellipse cx="24" cy="21" rx="4" ry="2.5" fill="#A03020" opacity="0.55"/>
+</svg>

@@ -1,0 +1,9 @@
+# Astronomy engine — downloaded separately (see lib/SETUP.md)
+lib/astronomy.browser.js
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

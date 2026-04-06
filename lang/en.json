@@ -1,0 +1,33 @@
+{
+  "SINE_PATRIA": {
+    "ActorTypes": {
+      "hero": "Hero",
+      "villain": "Villain",
+      "pawn": "Pawn"
+    },
+    "ItemTypes": {
+      "weapon": "Weapon",
+      "spell": "Spell"
+    },
+    "Fields": {
+      "Health": "Health",
+      "Power": "Power",
+      "Biography": "Biography",
+      "HairColor": "Hair Color",
+      "Goodness": "Goodness",
+      "Wickedness": "Wickedness",
+      "Progress": "Progress",
+      "Level": "Level",
+      "Rarity": "Rarity",
+      "Price": "Price",
+      "Damage": "Damage",
+      "Cost": "Cost"
+    },
+    "Rarity": {
+      "common": "Common",
+      "uncommon": "Uncommon",
+      "rare": "Rare",
+      "legendary": "Legendary"
+    }
+  }
+}

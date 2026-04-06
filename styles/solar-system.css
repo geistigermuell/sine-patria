@@ -1,0 +1,91 @@
+/* ============================================================ */
+/*  Sine Patria — Solar System / Calendar Styles               */
+/* ============================================================ */
+
+/* Scene Directory button */
+.sp-create-solar-system {
+  width: 100%;
+  margin-top: 4px;
+  background: #0a1628;
+  color: #64ffda;
+  border: 1px solid #233554;
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+.sp-create-solar-system:hover {
+  background: #112240;
+}
+
+#sine-patria-solar-calendar .window-content {
+  padding: 8px;
+  background: #0a0a1a;
+  color: #ccd6f6;
+}
+
+.sp-solar-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sp-field-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sp-field-row label {
+  min-width: 40px;
+  font-weight: bold;
+  color: #8892b0;
+}
+
+.sp-field-row input[type="date"] {
+  flex: 1;
+  background: #112240;
+  color: #ccd6f6;
+  border: 1px solid #233554;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.sp-step-row {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.sp-step-row button,
+.sp-action-row button {
+  background: #112240;
+  color: #64ffda;
+  border: 1px solid #233554;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: background 0.15s;
+}
+
+.sp-step-row button:hover,
+.sp-action-row button:hover {
+  background: #1d3461;
+}
+
+.sp-action-row {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.sp-action-row button[type="submit"] {
+  color: #ffffff;
+  background: #1a5276;
+  font-weight: bold;
+}
+
+.sp-action-row button[type="submit"]:hover {
+  background: #2471a3;
+}
