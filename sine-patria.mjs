@@ -73,17 +73,25 @@ Hooks.on("canvasReady", () => {
 
 /**
  * Adds a "Create Solar System" button to the Scene Directory sidebar.
- * Only shown to GMs.
+ * Only shown to GMs. Compatible with Foundry v13/v14 (AppV2 sidebar).
  */
 Hooks.on("renderSceneDirectory", (_app, html) => {
   if (!game.user.isGM) return;
 
-  const btn = $(`
-    <button type="button" class="sp-create-solar-system">
-      ☀ Create Solar System Scene
-    </button>
-  `);
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "sp-create-solar-system";
+  btn.textContent = "☀ Create Solar System Scene";
+  btn.addEventListener("click", () => SolarSystemManager.createScene());
 
-  btn.on("click", () => SolarSystemManager.createScene());
-  html.find(".directory-footer").append(btn);
+  // html is a plain HTMLElement in v14 AppV2, jQuery object in older versions.
+  const root = html instanceof HTMLElement ? html : html[0];
+
+  // Try known footer selectors across Foundry versions.
+  const footer = root.querySelector(".directory-footer")
+    ?? root.querySelector(".action-buttons")
+    ?? root.querySelector("footer")
+    ?? root;
+
+  footer.append(btn);
 });
