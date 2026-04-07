@@ -67,7 +67,11 @@ export class SolarCalendarApp extends HandlebarsApplicationMixin(ApplicationV2) 
       ui.notifications.warn("Invalid date.");
       return;
     }
-    await canvas.scene?.setFlag("sine-patria", "calendarDate", dateStr);
+    // Use render:false so the flag write doesn't trigger a canvas re-draw
+    await canvas.scene?.update(
+      { [`flags.sine-patria.calendarDate`]: dateStr },
+      { render: false }
+    );
     await SolarSystemManager.updatePlanetPositions(date);
   }
 

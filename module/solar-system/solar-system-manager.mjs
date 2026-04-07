@@ -113,12 +113,10 @@ export class SolarSystemManager {
     }
 
     if (updates.length) {
-      await scene.updateEmbeddedDocuments("Tile", updates);
-    }
-
-    // Refresh the orbit overlay if the scene is currently active.
-    if (canvas.scene?.id === scene.id) {
-      SolarSystemManager.drawOrbits();
+      // render:false prevents a full canvas re-draw (and canvasReady re-firing)
+      // for every tile update; we then manually refresh only the tiles layer.
+      await scene.updateEmbeddedDocuments("Tile", updates, { render: false });
+      if (canvas.scene?.id === scene.id) canvas.tiles?.draw();
     }
 
     ui.notifications.info(`Solar System updated to ${date.toDateString()}.`);
