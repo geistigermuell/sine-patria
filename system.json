@@ -19,14 +19,25 @@
   "styles": ["styles/system-styles.css", "styles/solar-system.css"],
   "packs": [
     {
+      "name": "sine-patria-scenes",
+      "label": "Sine Patria Scenes",
+      "path": "packs/sine-patria-scenes.db",
+      "type": "Scene",
+      "system": "sine-patria"
+    },
+    {
       "name": "monsters",
       "label": "Monsters",
-      "type": "Actor"
+      "path": "packs/monsters.db",
+      "type": "Actor",
+      "system": "sine-patria"
     },
     {
       "name": "items",
       "label": "Items",
-      "type": "Item"
+      "path": "packs/items.db",
+      "type": "Item",
+      "system": "sine-patria"
     }
   ],
   "languages": [{

@@ -53,18 +53,16 @@ Hooks.once("init", () => {
 /*  Solar System Scene Hooks                    */
 /* -------------------------------------------- */
 
-/** Draw orbit rings when the Solar System scene becomes active. */
-Hooks.on("canvasReady", () => {
-  SolarSystemManager.drawOrbits();
-});
-
-/** Open the calendar widget when entering the Solar System scene. */
-Hooks.on("canvasReady", () => {
-  if (canvas.scene?.getFlag("sine-patria", "isSolarSystem")) {
-    SolarSystemManager.openCalendar();
-  } else {
+/** Initialise, draw orbits, and open calendar when a Solar System scene loads. */
+Hooks.on("canvasReady", async () => {
+  if (!canvas.scene?.getFlag("sine-patria", "isSolarSystem")) {
     SolarSystemManager.closeCalendar();
+    return;
   }
+  // If imported from compendium, tiles won't exist yet — create them first.
+  await SolarSystemManager.initializeScene();
+  SolarSystemManager.drawOrbits();
+  SolarSystemManager.openCalendar();
 });
 
 /* -------------------------------------------- */

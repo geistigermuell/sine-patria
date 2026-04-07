@@ -173,6 +173,26 @@ export class SolarSystemManager {
   }
 
   /* -------------------------------------------- */
+  /*  Scene Initialisation (compendium import)    */
+  /* -------------------------------------------- */
+
+  /**
+   * Called on canvasReady for any scene flagged as isSolarSystem.
+   * If planet tiles haven't been created yet (e.g. freshly imported from
+   * the compendium), creates them now.
+   */
+  static async initializeScene() {
+    const scene = canvas.scene;
+    if (!scene?.getFlag(FLAG_SCOPE, SCENE_FLAG)) return;
+
+    const tileIds = scene.getFlag(FLAG_SCOPE, FLAG_TILES);
+    if (!tileIds) {
+      ui.notifications.info("Sine Patria | Setting up Solar System — placing planets…");
+      await SolarSystemManager._createPlanetTiles(scene);
+    }
+  }
+
+  /* -------------------------------------------- */
   /*  Calendar App                                */
   /* -------------------------------------------- */
 
