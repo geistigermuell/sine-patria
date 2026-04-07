@@ -113,10 +113,7 @@ export class SolarSystemManager {
     }
 
     if (updates.length) {
-      // render:false prevents a full canvas re-draw (and canvasReady re-firing)
-      // for every tile update; we then manually refresh only the tiles layer.
-      await scene.updateEmbeddedDocuments("Tile", updates, { render: false });
-      if (canvas.scene?.id === scene.id) canvas.tiles?.draw();
+      await scene.updateEmbeddedDocuments("Tile", updates);
     }
 
     ui.notifications.info(`Solar System updated to ${date.toDateString()}.`);

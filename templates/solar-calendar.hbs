@@ -1,24 +1,22 @@
-<form class="sp-solar-calendar" autocomplete="off">
-  <div class="sp-calendar-body">
+<div class="sp-solar-calendar">
 
-    <div class="sp-field-row">
-      <label for="sp-date">Date</label>
-      <input id="sp-date" type="date" name="date" value="{{date}}" />
-    </div>
-
-    <div class="sp-step-row">
-      <button type="button" data-action="step" data-delta="-365" title="&minus;1 year">&minus;1y</button>
-      <button type="button" data-action="step" data-delta="-30"  title="&minus;30 days">&minus;30d</button>
-      <button type="button" data-action="step" data-delta="-1"   title="&minus;1 day">&minus;1d</button>
-      <button type="button" data-action="step" data-delta="1"    title="+1 day">+1d</button>
-      <button type="button" data-action="step" data-delta="30"   title="+30 days">+30d</button>
-      <button type="button" data-action="step" data-delta="365"  title="+1 year">+1y</button>
-    </div>
-
-    <div class="sp-action-row">
-      <button type="button" data-action="today">Today</button>
-      <button type="submit">Update Positions</button>
-    </div>
-
+  <div class="sp-field-row">
+    <label for="sp-date">Date</label>
+    <input id="sp-date" type="date" name="date" value="{{date}}" />
   </div>
-</form>
+
+  <div class="sp-step-row">
+    <button type="button" data-action="step" data-delta="-365" title="&minus;1 year">&minus;1y</button>
+    <button type="button" data-action="step" data-delta="-30"  title="&minus;30 days">&minus;30d</button>
+    <button type="button" data-action="step" data-delta="-1"   title="&minus;1 day">&minus;1d</button>
+    <button type="button" data-action="step" data-delta="1"    title="+1 day">+1d</button>
+    <button type="button" data-action="step" data-delta="30"   title="+30 days">+30d</button>
+    <button type="button" data-action="step" data-delta="365"  title="+1 year">+1y</button>
+  </div>
+
+  <div class="sp-action-row">
+    <button type="button" data-action="today">Today</button>
+    <button type="button" data-action="update">Update Positions</button>
+  </div>
+
+</div>

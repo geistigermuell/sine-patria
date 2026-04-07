@@ -6,6 +6,9 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
  * Floating calendar widget that drives the solar system scene.
  * Uses ApplicationV2 (Foundry v13+).
  * Opens automatically when the Solar System scene is viewed.
+ *
+ * All buttons use data-action — no form submission is involved,
+ * which avoids AppV2 re-render side-effects that can disrupt the Foundry UI.
  */
 export class SolarCalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
@@ -20,14 +23,10 @@ export class SolarCalendarApp extends HandlebarsApplicationMixin(ApplicationV2) 
     position: {
       width: 340
     },
-    form: {
-      handler: SolarCalendarApp._onSubmit,
-      submitOnChange: false,
-      closeOnSubmit: false
-    },
     actions: {
-      today: SolarCalendarApp._onToday,
-      step: SolarCalendarApp._onStep
+      today:  SolarCalendarApp._onToday,
+      step:   SolarCalendarApp._onStep,
+      update: SolarCalendarApp._onUpdate
     }
   };
 
@@ -55,21 +54,21 @@ export class SolarCalendarApp extends HandlebarsApplicationMixin(ApplicationV2) 
   /* -------------------------------------------- */
 
   /**
-   * Handle form submission — recalculate planet positions.
-   * @param {SubmitEvent}       event
-   * @param {HTMLFormElement}   form
-   * @param {FormDataExtended}  formData
+   * Read the current date input and update planet positions.
+   * @param {PointerEvent}  event
+   * @param {HTMLElement}   _target
    */
-  static async _onSubmit(event, form, formData) {
-    const dateStr = formData.object.date;
+  static async _onUpdate(event, _target) {
+    const input = this.element.querySelector('[name="date"]');
+    if (!input) return;
+    const dateStr = input.value;
     const date = new Date(dateStr);
     if (isNaN(date.getTime())) {
       ui.notifications.warn("Invalid date.");
       return;
     }
-    // Use render:false so the flag write doesn't trigger a canvas re-draw
     await canvas.scene?.update(
-      { [`flags.sine-patria.calendarDate`]: dateStr },
+      { "flags.sine-patria.calendarDate": dateStr },
       { render: false }
     );
     await SolarSystemManager.updatePlanetPositions(date);
