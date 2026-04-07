@@ -3,7 +3,7 @@
   "title": "Sine Patria",
   "type": "system",
   "description": "A custom game system for Foundry VTT.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "compatibility": {
     "minimum": 13,
     "verified": "14.359"
