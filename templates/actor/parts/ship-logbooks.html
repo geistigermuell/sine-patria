@@ -1,0 +1,57 @@
+<div class="tab panel logbooks-panel" data-group="primary" data-tab="logbook">
+    <ol class="feature-list">
+        <li class="feature-category-header flexrow">
+            <span class="feature-category-name flexrow">{{localize "YZECORIOLIS.InitialDebt"}}</span>
+            <span class="feature-category-name flexrow">{{localize "YZECORIOLIS.PaidOff"}}</span>
+            <span class="feature-category-name flexrow">{{localize "YZECORIOLIS.Balance"}}</span>
+        </li>
+        <li class="feature item flexrow">
+            <div class="feature-bg flickering flexrow">
+                <div class="feature-name expandable-info flexrow">
+                    <span class="flexrow">
+                        <input class="right-aligned-number-input" placeholder="0" type="number" name="system.cost.initialDebt" value={{system.cost.initialDebt}} data-dtype="number" min="0" style="max-width: 7em;"> {{localize "YZECORIOLIS.Birr"}}
+                    </span>
+                    <span class="flexrow" style="margin-left: 0.5em;">
+                        <input class="right-aligned-number-input" placeholder="0" type="number" name="system.cost.paidOff" value={{system.cost.paidOff}} data-dtype="number" min="0" style="max-width: 7em;"> {{localize "YZECORIOLIS.Birr"}}
+                    </span>
+                    <span class="flexrow" style="margin-left: 1em;">
+                        {{subtract system.cost.paidOff system.cost.initialDebt}} {{localize "YZECORIOLIS.Birr"}}
+                    </span>
+                </div>
+            </div>
+        </li>
+    </ol>
+
+    <ol class="feature-list">
+        {{!-- setup header for Logbbook--}}
+        <li class="feature-category-header flexrow">
+            <span class="feature-category-name flexrow">{{localize "YZECORIOLIS.ShipLogbook"}}</span>
+            <span class="feature-category-name flexrow justify-end">{{localize "YZECORIOLIS.Checkout"}}</span>
+            {{#if owner}}
+            <div class="feature-controls">
+                <a class="feature-control-add-widget shipItem-create" title='{{localize "YZECORIOLIS.ShipCreateLogbook"}}'
+                    {{#each logbooks.dataset as |v k|}}data-{{k}}="{{v}}" {{/each}}>
+                    <i class="fas fa-plus"></i> {{localize "YZECORIOLIS.Add"}}
+                </a>
+            </div>
+            {{/if}}
+        </li>
+        {{!-- show each ship-logbook --}}
+        {{#each logbooks.items as |logbook|}}
+        <li class="feature item flexrow" data-item-id="{{logbook._id}}">
+            <div class="feature-bg flickering flexrow">
+                <div class="feature-name expandable-info flexrow">
+                    <span class="flexrow">{{#if logbook.system.segment}}{{logbook.system.segment}} - {{/if}}{{logbook.name}}</span>
+                    <span class="feature-row-data flexrow justify-end">{{#if logbook.system.checkout}}{{logbook.system.checkout}} {{localize "YZECORIOLIS.Birr"}}{{/if}}</span>
+                </div>
+                <div class="feature-controls">
+                    <a class="edit-widget faded shipItem-edit" title="{{localize "YZECORIOLIS.ShipEditLogbook"}}" data-feature={{logbook._id}}><i
+                            class="fas fa-edit"></i></a>
+                    <a class="edit-widget faded shipItem-delete"
+                        title="{{localize "YZECORIOLIS.ShipDeleteLogbook"}}" data-feature={{logbook._id}}><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+</div>

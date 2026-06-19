@@ -1,0 +1,91 @@
+<div class="tab biography" data-group="primary" data-tab="bio">
+    <div class="bio-stats">
+        <div class="bio-category-header">
+            <span class="bio-category-name">{{localize "YZECORIOLIS.Background"}}</span>
+        </div>
+        <div class="bio-block-list flexrow">
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.Origin"}}</span>
+                <input class="bio-input" name="system.bio.origin" type="text" value="{{system.bio.origin}}"
+                    placeholder="{{localize "YZECORIOLIS.Origin"}}" />
+            </div>
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.Upbringing"}}</span>
+                <input class="bio-input" name="system.bio.upbringing" type="text" value="{{system.bio.upbringing}}"
+                    placeholder="{{localize "YZECORIOLIS.Upbringing"}}" />
+            </div>
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.Humanite"}}</span>
+                <input class="bio-checkbox" type="checkbox" name="system.bio.humanite" data-dtype="Boolean"
+                    {{checked system.bio.humanite}} />
+            </div>
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.GroupConcept"}}</span>
+                <input class="bio-input" name="system.bio.groupConcept" type="text" value="{{system.bio.groupConcept}}"
+                    placeholder="{{localize "YZECORIOLIS.GroupConcept"}}" />
+            </div>
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.PersonalProblem"}}</span>
+                <input class="bio-input" name="system.bio.personalProblem" type="text"
+                    value="{{system.bio.personalProblem}}" placeholder="{{localize "YZECORIOLIS.PersonalProblem"}}" />
+            </div>
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.CrewPosition"}}</span>
+                <select class="skill-category crew-position">
+                    {{#select currentCrewOption}}
+                    {{#each crewOptions as |option|}}
+                    <option value="{{option.key}}">{{option.label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.Appearance"}}:
+                    {{localize "YZECORIOLIS.Face"}}</span>
+                <input class="bio-input" name="system.bio.appearance.face" type="text"
+                    value="{{system.bio.appearance.face}}" placeholder="{{localize "YZECORIOLIS.Appearance"}}" />
+            </div>
+            <div class="bio-block">
+                <span class="bio-block-title">{{localize "YZECORIOLIS.Appearance"}}:
+                    {{localize "YZECORIOLIS.Clothing"}}</span>
+                <input class="bio-input" name="system.bio.appearance.clothing" type="text"
+                    value="{{system.bio.appearance.clothing}}" placeholder="{{localize "YZECORIOLIS.Clothing"}}" />
+            </div>
+        </div>
+
+
+        <ol class="gear-list relations-list">
+            <li class="gear-category-header flexrow">
+                <div class="gear-category-name first">{{localize "YZECORIOLIS.Relationships"}}</div>
+                <div class="gear-category-name center">{{localize "YZECORIOLIS.Buddy"}}</div>
+                {{#if owner}}
+                <div class="gear-controls">
+                    <a class="gear-control-add-widget relationship-create"
+                        title='{{localize "YZECORIOLIS.AddRelationship"}}'
+                        {{#each gearDataSet as |v k|}}data-{{k}}="{{v}}" {{/each}}>
+                        <i class="fas fa-plus"></i> {{localize "YZECORIOLIS.Add"}}
+                    </a>
+                </div>
+                {{/if}}
+            </li>
+            {{#each system.relationships as |relation relKey|}}
+            <li class="gear flexrow relation" data-item-id="{{relKey}}">
+                <div class=" gear-bg flexrow">
+                    <input class="bio-input relation-name" type="text" name="system.relationships.{{relKey}}.name"
+                        value="{{relation.name}}" placeholder="{{localize "YZECORIOLIS.Name"}}" />
+                    <div class="flex1 flexrow buddy-box">
+                        <input class="bio-checkbox" type="checkbox" name="system.relationships.{{relKey}}.buddy"
+                            data-dtype="Boolean" {{checked relation.buddy}} />
+                    </div>
+                    <div class="biography-controls flexrow">
+                        <a class="bio-control-widget relationship-delete"
+                            title={{localize "YZECORIOLIS.RemoveRelationship"}}><i class="fas fa-trash"></i></a>
+                    </div>
+                </div>
+            </li>
+
+            {{/each}}
+        </ol>
+
+    </div>
+</div>

@@ -1,0 +1,368 @@
+{
+  "Actor": {
+    "types": ["character", "npc", "ship"],
+    "templates": {
+      "base": {
+        "hitPoints": {
+          "value": 10,
+          "min": 0,
+          "max": 10
+        },
+        "mindPoints": {
+          "value": 10,
+          "min": 0,
+          "max": 10
+        },
+        "experience": {
+          "value": 0,
+          "min": 0,
+          "max": 10
+        },
+        "radiation": {
+          "value": 0,
+          "min": 0,
+          "max": 10
+        },
+        "reputation": {
+          "value": 0,
+          "min": 0,
+          "max": 10
+        },
+        "attributes": {
+          "strength": {
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "agility": {
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "wits": {
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "empathy": {
+            "value": 0,
+            "min": 0,
+            "max": 5
+          }
+        },
+        "skills": {
+          "dexterity": {
+            "category": "general",
+            "attribute": "agility",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "force": {
+            "category": "general",
+            "attribute": "strength",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "infiltration": {
+            "category": "general",
+            "attribute": "agility",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "manipulation": {
+            "category": "general",
+            "attribute": "empathy",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "meleecombat": {
+            "category": "general",
+            "attribute": "strength",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "observation": {
+            "category": "general",
+            "attribute": "wits",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "rangedcombat": {
+            "category": "general",
+            "attribute": "agility",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "survival": {
+            "category": "general",
+            "attribute": "wits",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "command": {
+            "category": "advanced",
+            "attribute": "empathy",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "culture": {
+            "category": "advanced",
+            "attribute": "empathy",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "datadjinn": {
+            "category": "advanced",
+            "attribute": "wits",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "medicurgy": {
+            "category": "advanced",
+            "attribute": "wits",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "mysticpowers": {
+            "category": "advanced",
+            "attribute": "empathy",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "pilot": {
+            "category": "advanced",
+            "attribute": "agility",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "science": {
+            "category": "advanced",
+            "attribute": "wits",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          },
+          "technology": {
+            "category": "advanced",
+            "attribute": "wits",
+            "img": "icons/svg/mystery-man.svg",
+            "value": 0,
+            "min": 0,
+            "max": 5
+          }
+        },
+        "notes": "",
+        "bio": {
+          "origin": "",
+          "upbringing": "",
+          "humanite": false,
+          "concept": "",
+          "icon": "",
+          "groupConcept": "",
+          "personalProblem": "",
+          "appearance": {
+            "face": "",
+            "clothing": ""
+          },
+          "crewPosition": {
+            "position": "",
+            "shipId": ""
+          }
+        },
+        "relationships": {},
+        "meetings": {},
+        "cabin": {
+          "description": ""
+        },
+        "birr": 0,
+        "movementRate": 10,
+        "keyArt": ""
+      }
+    },
+    "character": {
+      "templates": ["base"]
+    },
+    "npc": {
+      "templates": ["base"]
+    },
+    "ship": {
+      "class": "I",
+      "shipyard": "",
+      "shipType": "",
+      "hullPoints": {
+        "value": 10,
+        "min": 0,
+        "max": 10
+      },
+      "manueverability": {
+        "value": 0,
+        "min": 0,
+        "max": 25
+      },
+      "speed": {
+        "value": 0,
+        "min": 0,
+        "max": 25
+      },
+      "signature": {
+        "value": 0,
+        "min": 0,
+        "max": 25
+      },
+      "armor": {
+        "value": 0,
+        "min": 0,
+        "max": 25
+      },
+      "cost": {
+        "value": 0,
+        "balance": 0,
+        "paidOff": 0,
+        "initialDebt": 0
+      },
+      "notes": "",
+      "maxEnergyPoints": 10
+    }
+  },
+  "Item": {
+    "types": [
+      "gear",
+      "talent",
+      "weapon",
+      "armor",
+      "injury",
+      "shipProblem",
+      "energyPointToken",
+      "shipModule",
+      "shipFeature",
+      "shipCriticalDamage",
+      "shipLogbook"
+    ],
+    "templates": {
+      "base": {
+        "description": "",
+        "itemModifiers": {}
+      },
+      "gear": {
+        "description": "",
+        "weight": "",
+        "techTier": "",
+        "cost": 0,
+        "quantity": 1,
+        "restricted": false,
+        "equipped": false,
+        "itemModifiers": {}
+      }
+    },
+    "gear": {
+      "templates": ["gear"],
+      "bonus": 0
+    },
+    "talent": {
+      "templates": ["base"],
+      "category": "",
+      "cost": 0,
+      "groupConcept": ""
+    },
+    "weapon": {
+      "templates": ["gear"],
+      "reloads": {
+        "value": 0,
+        "min": 0,
+        "max": 6
+      },
+      "crit": {
+        "numericValue": 0,
+        "customValue": ""
+      },
+      "explosive": false,
+      "blastRadius": "",
+      "blastPower": 0,
+      "bonus": 0,
+      "damage": 0,
+      "damageText": "",
+      "initiative": 0,
+      "range": "",
+      "automatic": false,
+      "special": {},
+      "melee": false
+    },
+    "armor": {
+      "templates": ["gear"],
+      "armorRating": 0,
+      "special": {},
+      "extraFeatures": 0
+    },
+    "injury": {
+      "templates": ["base"],
+      "fatal": false,
+      "timeLimit": "",
+      "healTime": "",
+      "bonus": 0
+    },
+    "shipProblem": {
+      "templates": ["base"]
+    },
+    "shipCriticalDamage": {
+      "templates": ["base"]
+    },
+    "shipModule": {
+      "templates": ["gear"],
+      "bonus": 0,
+      "enabled": false,
+      "damage": 0,
+      "range": "",
+      "crit": {
+        "numericValue": 0,
+        "customValue": ""
+      },
+      "category": "",
+      "special": {}
+    },
+    "shipFeature": {
+      "templates": ["gear"],
+      "effect": ""
+    },
+    "energyPointToken": {
+      "active": false,
+      "holder": ""
+    },
+    "shipLogbook": {
+      "templates": ["base"],
+      "destination": "",
+      "segment": "",
+      "route": "",
+      "danger": "",
+      "checkout": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div style="padding: 1em 1em;">
+  <h3>{{localize "YZECORIOLIS.RollVisibility"}}</h3>
+  <select name="dialogRollMode" id="dialogRollModeId">
+    <option value="publicroll" {{#if_eq rollMode "publicroll"}}selected{{/if_eq}}>
+      {{localize "YZECORIOLIS.PublicRoll"}}
+    </option>
+    <option value="gmroll" {{#if_eq rollMode "gmroll"}}selected{{/if_eq}}>
+      {{localize "YZECORIOLIS.PrivateGMRoll"}}
+    </option>
+    <option value="blindroll" {{#if_eq rollMode "blindroll"}}selected{{/if_eq}}>
+      {{localize "YZECORIOLIS.BlindGMRoll"}}
+    </option>
+    <option value="selfroll" {{#if_eq rollMode "selfroll"}}selected{{/if_eq}}>
+      {{localize "YZECORIOLIS.SelfRoll"}}
+    </option> 
+  </select>
+</div>

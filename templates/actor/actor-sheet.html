@@ -1,0 +1,174 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <div class="sheet-container">
+    <div class="key-art-container col-start-1 col-end-2 row-start-1 row-end-4 z-1 max-h-750 overflow-hidden">
+      <img class="vertical-img" src="{{img}}" data-edit="img" title="{{name}}">
+    </div>
+    <div class="gradient-overlay"></div>
+    <div class="always-visible-stats">
+      <ol class="perma-stats-list">
+        <li class="entry flexrow">
+          <div class="stat-label">{{localize "YZECORIOLIS.HitPoints"}}</div>
+          <div class="bar hp-bar fr-basic">
+            {{#each hpBlocks as |hpBlock index|}}
+            {{#with ../system as | system |}}
+            {{#if hpBlock.on}}
+            <div class="bar-segment bar-rounded on" data-name="system.hitPoints.value" data-index={{index}}
+              data-current={{system.hitPoints.value}} data-min={{system.hitPoints.min}} data-max={{system.hitPoints.max}}>
+            </div>
+            {{else}}
+            <div class="bar-segment bar-rounded off" data-name="system.hitPoints.value" data-index={{index}}
+              data-current={{system.hitPoints.value}} data-min={{system.hitPoints.min}} data-max={{system.hitPoints.max}}>
+            </div>
+            {{/if}}
+            {{/with}}
+            {{/each}}
+            <span class="bar-value">{{system.hitPoints.value}}</span>
+          </div>
+        </li>
+        <li class="entry flexrow">
+          <div class="stat-label">{{localize "YZECORIOLIS.MindPoints"}}</div>
+          <div class="bar mind-bar fr-basic">
+            {{#each mindBlocks as |mBlock index|}}
+            {{#with ../system as | system |}}
+            {{#if mBlock.on}}
+            <div class="bar-segment bar-rounded on" data-name="system.mindPoints.value" data-index={{index}}
+              data-current={{system.mindPoints.value}} data-min={{system.mindPoints.min}} data-max={{system.mindPoints.max}}>
+            </div>
+            {{else}}
+            <div class="bar-segment bar-rounded off" data-name="system.mindPoints.value" data-index={{index}}
+              data-current={{system.mindPoints.value}} data-min={{system.mindPoints.min}} data-max={{system.mindPoints.max}}>
+            </div>
+            {{/if}}
+            {{/with}}
+            {{/each}}
+            <span class="bar-value">{{system.mindPoints.value}}</span>
+          </div>
+        </li>
+        <li class="entry flexrow">
+          <div class="stat-label">{{localize "YZECORIOLIS.Radiation"}}</div>
+          <div class="bar radiation-bar fr-basic">
+            {{#each radiationBlocks as |rBlock index|}}
+            {{#with ../system as | system |}}
+            {{#if rBlock.on}}
+            <div class="bar-segment bar-rounded on" data-name="system.radiation.value" data-index={{index}}
+              data-current={{system.radiation.value}} data-min={{system.radiation.min}} data-max={{system.radiation.max}}>
+            </div>
+            {{else}}
+            <div class="bar-segment bar-rounded off" data-name="system.radiation.value" data-index={{index}}
+              data-current={{system.radiation.value}} data-min={{system.radiation.min}} data-max={{system.radiation.max}}>
+            </div>
+            {{/if}}
+            {{/with}}
+            {{/each}}
+            <span class="bar-value">{{system.radiation.value}}</span>
+          </div>
+        </li>
+        <li class="entry flexrow">
+          <div class="stat-label">{{localize "YZECORIOLIS.Experience"}}</div>
+          <div class="bar xp-bar fr-basic">
+            {{#each xpBlocks as |xBlock index|}}
+            {{#with ../system as | system |}}
+            {{#if xBlock.on}}
+            <div class="bar-segment bar-rounded on" data-name="system.experience.value" data-index={{index}}
+              data-current={{system.experience.value}} data-min={{system.experience.min}} data-max={{system.experience.max}}>
+            </div>
+            {{else}}
+            <div class="bar-segment bar-rounded off" data-name="system.experience.value" data-index={{index}}
+              data-current={{system.experience.value}} data-min={{system.experience.min}} data-max={{system.experience.max}}>
+            </div>
+            {{/if}}
+            {{/with}}
+            {{/each}}
+            <span class="bar-value">{{system.experience.value}}</span>
+          </div>
+        </li>
+        <li class="entry flexrow">
+          <div class="stat-label">{{localize "YZECORIOLIS.Reputation"}}</div>
+          <div class="bar rep-bar fr-basic">
+            {{#each repBlocks as |repBlock index|}}
+            {{#with ../system as | system |}}
+            {{#if repBlock.on}}
+            <div class="bar-segment bar-rounded on" data-name="system.reputation.value" data-index={{index}}
+              data-current={{system.reputation.value}} data-min={{system.reputation.min}} data-max={{system.reputation.max}}>
+            </div>
+            {{else}}
+            <div class="bar-segment bar-rounded off" data-name="system.reputation.value" data-index={{index}}
+              data-current={{system.reputation.value}} data-min={{system.reputation.min}} data-max={{system.reputation.max}}>
+            </div>
+            {{/if}}
+            {{/with}}
+            {{/each}}
+            <span class="bar-value">{{system.reputation.value}}</span>
+          </div>
+        </li>
+        <li class="entry flexrow">
+          <div class="capitalize stat-label">{{localize "YZECORIOLIS.MovementRate"}}</div>
+          <div class="number" style="display:inline-flex; padding-inline:2em;">
+            <input class="input-value" type="text" name="system.movementRate" value="{{system.movementRate}}" data-dtype="Number" placeholder="0" />
+            {{#if system.movementRateMods}}
+              <input class="input-value" type="text" name="system.movementRateMods" value="" data-dtype="Number" placeholder="({{#if_gt system.movementRateMods 0}}+{{/if_gt}}{{system.movementRateMods}})" readonly/>
+            {{/if}}
+          </div>
+        </li>
+        <li class="entry flexrow">
+          <div class="capitalize stat-label">{{localize "YZECORIOLIS.Birr"}}</div>
+          <div class="number">
+            <input class="input-value" type="text" name="system.birr" value="{{system.birr}}" data-dtype="Number" />
+          </div>
+        </li>
+        <li class="entry flexrow">
+          <div class="stat-label">{{localize "YZECORIOLIS.Icon"}}</div>
+          <div class="number">
+            <input class="input-value" placeholder={{localize "YZECORIOLIS.Icon"}} type="text" name="system.bio.icon"
+              value="{{system.bio.icon}}" data-dtype="String" />
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="char-content-wrapper">
+      <header class="sheet-header">
+
+        <header class="name-plate">
+          <input class="char-name-input" name="name" type="text" value="{{name}}"
+            placeholder="{{localize "YZECORIOLIS.Name"}}" />
+        </header>
+        <div class="char-class">
+          <input class="char-class-input" name="system.bio.concept" type="text" value="{{system.bio.concept}}"
+            placeholder="{{localize "YZECORIOLIS.Concept"}}" />
+        </div>
+      </header>
+      <div class="sheet-body">
+        <nav class="navigation tabs" data-group="primary">
+          <a class="item nav-link active" data-tab="stats">{{localize "YZECORIOLIS.SheetStats"}}</a>
+          <a class="item nav-link" data-tab="talents">{{localize "YZECORIOLIS.SheetTalents"}}</a>
+          <a class="item nav-link" data-tab="gear">{{localize "YZECORIOLIS.SheetItems"}}</a>
+          {{#if owner}}
+          <a class="item nav-link" data-tab="bio">{{localize "YZECORIOLIS.SheetBio"}}</a>
+          <a class="item nav-link" data-tab="charnotes">{{localize "YZECORIOLIS.CharNotes"}}</a>
+          {{/if }}
+        </nav>
+
+        <section class="sheet-panels">
+          {{!-- Stats Tab --}}
+          {{> "systems/yzecoriolis/templates/actor/parts/actor-stats.html"}}
+
+          {{!-- Talents Tab --}}
+          {{> "systems/yzecoriolis/templates/actor/parts/actor-talents.html"}}
+
+          {{!-- Gear Tab --}}
+          {{> "systems/yzecoriolis/templates/actor/parts/actor-gear.html"}}
+
+          {{#if owner}}
+          {{!-- Bio Tab --}}
+          {{> "systems/yzecoriolis/templates/actor/parts/actor-bio.html"}}
+
+          {{!-- Notes Tab --}}
+          <div class="tab charnotes" data-group="primary" data-tab="charnotes">
+            {{editor bioNotes target="system.notes" button=true owner=owner editable=editable}}
+          </div>
+          {{/if }}
+        </section>
+      </div>
+    </div>
+  </div>
+</form>

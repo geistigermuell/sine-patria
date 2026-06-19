@@ -1,0 +1,18 @@
+<div class="coriolis-results">
+    {{#each parts}}
+    <section class="tooltip-part">
+        <div class="dice">
+            <p class="part-formula">
+                {{this.formula}}
+            </p>
+            <ol class="dice-rolls">
+                {{#each this.rolls}}
+                <li class="roll {{this.classes}}">
+                    {{{this.result}}}
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+    </section>
+    {{/each}}
+</div>

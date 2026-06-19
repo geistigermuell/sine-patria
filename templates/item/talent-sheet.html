@@ -1,0 +1,58 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
+            <div class="grid grid-2col">
+                <div class="resource flexrow talent-category">
+                    <label class="resource-label">{{localize "YZECORIOLIS.Category"}}</label>
+                    <select class="skill-category" name="system.category">
+                        {{#select system.category}}
+                        {{#each config.talentCategories as |label category|}}
+                        <option value="{{category}}">{{label}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+                {{#if_eq system.category 'group'}}
+                <div class="resource flexrow">
+                    <label class="resource-label">{{localize "YZECORIOLIS.GroupConcept"}}</label>
+                    <select class="skill-attribute" name="system.groupConcept">
+                        {{#select system.groupConcept}}
+                        {{#each config.talentGroupConceptCategories as |label groupTalent|}}
+                        <option value="{{groupTalent}}">{{label}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+                {{/if_eq}}
+                {{!-- Display the cost if it has any --}}
+                {{#talentHasCost system.category}}
+                <div class="flexrow">
+                    <label class="cost-label flexrow">{{localize "YZECORIOLIS.MoneyCost"}}</label>
+                    <input class="cost-input flexrow" type="text" name="system.cost" value="{{system.cost}}"
+                        data-dtype="Number" />
+                        <label class="cost-currency-label flexrow" style="padding-left: 0.5em;">{{localize "YZECORIOLIS.Birr"}}</label>
+                </div>
+                {{/talentHasCost}}
+            </div>
+        </div>
+        {{> systems/yzecoriolis/templates/item/modifiers.html }}
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">{{localize "YZECORIOLIS.Description"}}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="description">
+            {{editor itemDescript target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+
+    </section>
+</form>
